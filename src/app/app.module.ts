@@ -4,6 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AutocompleteComponent } from './autocomplete/autocomplete.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatInputModule} from "@angular/material/input";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -12,7 +16,11 @@ import { AutocompleteComponent } from './autocomplete/autocomplete.component';
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatInputModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

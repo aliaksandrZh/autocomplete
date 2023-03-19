@@ -1,0 +1,15 @@
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+  <app-autocomplete
+    [options]="options"
+    [control]="fg.controls.user"
+  >
+  </app-autocomplete>
+
+  <app-autocomplete
+    [control]="fg.controls.userAsync"
+    [asyncOptions]="getUsersAsync"
+  >
+  </app-autocomplete>
+
+  <button type="submit">Submit</button>
+</form>

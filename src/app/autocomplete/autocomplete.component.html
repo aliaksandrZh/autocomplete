@@ -1,1 +1,20 @@
-<p>autocomplete works!</p>
+<mat-form-field
+  [style.width]="'400px'"
+  class="example-full-width" appearance="fill">
+  <mat-label>AutoComplete</mat-label>
+  <input type="text"
+         matInput
+         [formControl]="control"
+         [matAutocomplete]="auto">
+  <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn">
+    <mat-option *ngFor="let option of filteredOptions$ | async" [value]="option">
+      {{option.displayText}}
+    </mat-option>
+  </mat-autocomplete>
+  <mat-error *ngIf="control.errors?.['incorrect']">
+    Value doesn't match with options
+  </mat-error>
+  <mat-error *ngIf="control.errors?.['required']">
+    Field is required
+  </mat-error>
+</mat-form-field>
